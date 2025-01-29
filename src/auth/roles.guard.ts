@@ -22,14 +22,9 @@ export class RolesGuard implements CanActivate {
     context: ExecutionContext,
   ): boolean | Promise<boolean> | Observable<boolean> {
     try {
-      // нужно для того, чтобы получить данные переданные с помощью кастомного декоратора RolesAuth
       const requiredRoles = this.reflector.getAllAndOverride<string[]>(
         ROLES_KEY,
-        [
-          // чтобы рефлектор понимал, какие данные ему доставать, нужно передать ему контекст
-          context.getHandler(),
-          context.getClass(),
-        ],
+        [context.getHandler(), context.getClass()],
       );
       if (!requiredRoles) {
         return true;
@@ -44,7 +39,6 @@ export class RolesGuard implements CanActivate {
       }
 
       const user = this.jwtService.verify<JwtPayload>(token);
-      // проверяем, есть ли у пользователя хотя бы одна из требуемых ролей для текущего эндпоинта
       return user.roles.some((role) => requiredRoles.includes(role.value));
     } catch {
       throw new UnauthorizedException({ message: 'Unauthenticated' });

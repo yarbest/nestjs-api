@@ -9,13 +9,12 @@ export class FilesService {
   /** saves file to the server, Not BD, and returns the path to the file */
   createFile(file: Express.Multer.File) {
     try {
-      // take extension from the file
       const fileName = v4() + '.jpg';
       const filePath = path.resolve(__dirname, '..', 'static');
 
       // if there is no such folder, create it
       if (!fs.existsSync(filePath)) {
-        fs.mkdirSync(filePath, { recursive: true }); // recursive means that it will create all folders in the path
+        fs.mkdirSync(filePath, { recursive: true });
       }
 
       // adds file to the folder
