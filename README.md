@@ -9,6 +9,7 @@
 - File upload with multer
 - Example of Swagger documentation for API
 - Custom guards, interceptors, decorators, and pipes
+- Setup migrations
 
 ### DB Relations:
 
