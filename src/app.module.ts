@@ -35,7 +35,6 @@ import { FilesModule } from './files/files.module';
       database: process.env.POSTGRES_DB,
       models: [UsersModel, RolesModel, UsersRolesModel, PostsModel],
       autoLoadModels: true, // sequelize creates tables in DB based on models we create
-      synchronize: true, // sequelize syncs models with DB
     }),
 
     UsersModule,
