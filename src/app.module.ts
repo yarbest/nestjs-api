@@ -34,7 +34,8 @@ import { FilesModule } from './files/files.module';
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DB,
       models: [UsersModel, RolesModel, UsersRolesModel, PostsModel],
-      autoLoadModels: true, // squalize creates tables in BD based on models we create
+      autoLoadModels: true, // sequelize creates tables in DB based on models we create
+      synchronize: true, // sequelize syncs models with DB
     }),
 
     UsersModule,
