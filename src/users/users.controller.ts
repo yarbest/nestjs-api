@@ -5,7 +5,6 @@ import {
   Post,
   UseGuards,
   UsePipes,
-  ValidationPipe,
 } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 
@@ -17,7 +16,7 @@ import { RolesGuard } from 'src/auth/roles.guard';
 import { AddRoleDTO } from './dto/addRoleDTO';
 import { AuthGuard } from 'src/auth/auth.guard';
 import { BanUserDTO } from './dto/banUserDTO';
-// import { ValidationPipe } from 'src/pipes/validation.pipe';
+import { ValidationPipe } from 'src/pipes/validation.pipe';
 
 @ApiTags('Users')
 @Controller('users')
