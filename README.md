@@ -1,4 +1,4 @@
-# NestJS, Sequelize + Postgres, JWT, , Class-validator, Multer, Custom Decorators, Guards, Interceptors, Pipes, Roles, Swagger.
+# NestJS, Sequelize + Postgres, JWT, , Class-validator, Multer, Custom Decorators, Guards, Interceptors, Pipes, Roles, Swagger, Docker.
 
 ## Functionality:
 
@@ -10,6 +10,7 @@
 - Example of Swagger documentation for API
 - Custom guards, interceptors, decorators, and pipes
 - Setup migrations
+- Setup Docker
 
 ### DB Relations:
 
